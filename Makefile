@@ -1,5 +1,12 @@
-all:
-	c-for-go -ccdefs -out .. vulkan.yml
+OS := $(shell uname -s)
+
+all: ${OS}
+
+Linux:
+	c-for-go -ccdefs -ccincl -out .. vulkan-unix.yml
+
+Darwin:
+	c-for-go -ccdefs -ccincl -out .. vulkan-darwin.yml
 
 clean:
 	rm -f doc.go types.go const.go
