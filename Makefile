@@ -3,7 +3,7 @@ OS := $(shell uname -s)
 all: ${OS}
 
 Linux:
-	c-for-go -ccdefs -ccincl -out .. vulkan-unix.yml
+	c-for-go -ccdefs -ccincl -out .. vulkan-linux.yml
 
 Darwin:
 	c-for-go -ccdefs -ccincl -out .. vulkan-darwin.yml
